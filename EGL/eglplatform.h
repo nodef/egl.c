@@ -1,3 +1,11 @@
+#ifdef EGL_IMPLEMENTATION
+
+// Directly include GLAD's EGL implementation
+#define GLAD_EGL_IMPLEMENTATION
+#include "egl.c"
+
+#else /* EGL_IMPLEMENTATION */
+
 #ifndef __eglplatform_h_
 #define __eglplatform_h_
 
@@ -173,3 +181,4 @@ typedef khronos_int32_t EGLint;
 #endif
 
 #endif /* __eglplatform_h */
+#endif /* EGL_IMPLEMENTATION */

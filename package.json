@@ -1,6 +1,6 @@
 {
   "name": "egl.c",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "EGL API and Extension Registry; The Khronos Group (2016).",
   "keywords": [
     "c",

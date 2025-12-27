@@ -38,13 +38,10 @@ echo ""
 
 # Test the project
 test() {
-echo "Running 01-print-version.c ..."
-clang -I. -o 01.exe examples/01-print-version.c  && ./01.exe && echo -e "\n"
-echo "Running 02-simple-buffer.c ..."
-clang -I. -o 02.exe examples/02-simple-buffer.c  && ./02.exe && echo -e "\n"
-echo "Running 03-file-compress.c ..."
-clang -I. -o 03.exe examples/03-file-compress.c
-./03.exe examples/03-file-compress.c && echo -e "\n"
+echo "Running 01-basic-rendering.c ..."
+clang -I. -o 01.exe examples/01-basic-rendering.c  && ./01.exe && echo -e "\n"
+# echo "Running 02-advanced-texture.c ..."
+# clang -I. -o 02.exe examples/02-advanced-texture.c  && ./02.exe && echo -e "\n"
 }
 
 

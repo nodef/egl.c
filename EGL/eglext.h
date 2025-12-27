@@ -1,3 +1,11 @@
+#ifdef EGL_IMPLEMENTATION
+
+// Directly include GLAD's EGL implementation
+#define GLAD_EGL_IMPLEMENTATION
+#include "egl.c"
+
+#else /* EGL_IMPLEMENTATION */
+
 #ifndef __eglext_h_
 #define __eglext_h_ 1
 
@@ -1519,3 +1527,4 @@ EGLAPI struct wl_buffer *EGLAPIENTRY eglCreateWaylandBufferFromImageWL (EGLDispl
 #endif
 
 #endif
+#endif /* EGL_IMPLEMENTATION */

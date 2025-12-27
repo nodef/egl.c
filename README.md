@@ -44,13 +44,17 @@ And then include `egl.h`, and related files, as follows:
 
 ```c
 // main.c
-#inc
+#define EGL_IMPLEMENTATION
 #include "node_modules/egl.c/KHR/khrplatform.h"  // Khronos platform-specific types and definitions
 #include "node_modules/egl.c/EGL/egl.h"          // Core EGL API
 #include "node_modules/egl.c/EGL/eglext.h"       // EGL extensions
 #include "node_modules/egl.c/EGL/eglplatform.h"  // EGL platform-specific types and definitions
 
-int main() { /* ... */ }
+int main() {
+  int version = gladLoaderLoadEGL(EGL_NO_DISPLAY);
+  if (version == 0) return -1;
+  /* ... */
+}
 ```
 
 And then compile with `clang` or `gcc` as usual.
@@ -64,12 +68,17 @@ You may also use a simpler approach:
 
 ```c
 // main.c
+#define EGL_IMPLEMENTATION
 #include <KHR/khrplatform.h>  // Khronos platform-specific types and definitions
 #include <EGL/egl.h>          // Core EGL API
 #include <EGL/eglext.h>       // EGL extensions
 #include <EGL/eglplatform.h>  // EGL platform-specific types and definitions
 
-int main() { /* ... */ }
+int main() {
+  int version = gladLoaderLoadEGL(EGL_NO_DISPLAY);
+  if (version == 0) return -1;
+  /* ... */
+}
 ```
 
 If you add the path `node_modules/egl.c` to your compiler's include paths.
@@ -78,6 +87,11 @@ If you add the path `node_modules/egl.c` to your compiler's include paths.
 $ clang -I./node_modules/egl.c main.c  # or, use gcc
 $ gcc   -I./node_modules/egl.c main.c
 ```
+
+> [!NOTE]
+> This package uses the [glad](https://github.com/Dav1dde/glad) EGL loader.
+> Further, the system or local directory must contain `libEGL.so` or equivalent
+> shared library for your platform, so that the EGL functions can be loaded.
 
 <br>
 

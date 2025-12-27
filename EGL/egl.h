@@ -1,3 +1,11 @@
+#ifdef EGL_IMPLEMENTATION
+
+// Directly include GLAD's EGL implementation
+#define GLAD_EGL_IMPLEMENTATION
+#include "egl.c"
+
+#else /* EGL_IMPLEMENTATION */
+
 #ifndef __egl_h_
 #define __egl_h_ 1
 
@@ -338,5 +346,6 @@ EGLAPI EGLBoolean EGLAPIENTRY eglWaitSync (EGLDisplay dpy, EGLSync sync, EGLint 
 #ifdef __cplusplus
 }
 #endif
-
 #endif
+
+#endif /* EGL_IMPLEMENTATION */
