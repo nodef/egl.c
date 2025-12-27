@@ -1,0 +1,27 @@
+{
+  "name": "egl.c",
+  "version": "1.5.0",
+  "description": "EGL API and Extension Registry; The Khronos Group (2016).",
+  "keywords": [
+    "c",
+    "library",
+    "egl",
+    "opengl",
+    "opengl-es",
+    "khronos"
+  ],
+  "homepage": "https://github.com/nodef/egl.c#readme",
+  "bugs": {
+    "url": "https://github.com/nodef/egl.c/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/egl.c.git"
+  },
+  "license": "Apache-2.0",
+  "author": "wolfram77@gmail.com",
+  "main": "EGL/egl.h",
+  "scripts": {
+    "test": "bash build.sh test"
+  }
+}
